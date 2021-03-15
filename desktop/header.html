@@ -17,6 +17,7 @@
         userLikesReceived = result.user_summary.likes_received;
         userLikesGiven = result.user_summary.likes_given;
         userPostCount = result.user_summary.post_count;
+        userTopicCount = result.user_summary.topic_count;
 
         result.badges.forEach(function(badges){
           stinkinBadges.push(badges);
@@ -25,6 +26,7 @@
         component.set('userLikesReceived', userLikesReceived);
         component.set('userLikesGiven', userLikesGiven);
         component.set('userPostCount', userPostCount);
+        component.set('userTopicCount', userTopicCount);
         component.set('stinkinBadges', stinkinBadges);
         component.set('userName', api.getCurrentUser().name);
         component.set('user', api.getCurrentUser().username);
@@ -55,6 +57,7 @@
       {{user-stat value=userLikesReceived icon="heart" label="user.summary.likes_received"}}
       {{user-stat value=userLikesGiven icon="heart" label="user.summary.likes_given"}}
       {{user-stat value=userPostCount icon="heart" label="user.summary.post_count"}}
+      {{user-stat value=userTopicCount icon="heart" label="user.summary.topic_count"}}
     </div>
     {{/if}}
     {{/if}}
