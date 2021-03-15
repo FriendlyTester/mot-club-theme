@@ -12,7 +12,3 @@ sidebar_show_intro:
 sidebar_show_likes:
    type: bool 
    default: true
-
-sidebar_show_badges: 
-   type: bool 
-   default: true

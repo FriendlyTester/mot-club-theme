@@ -56,23 +56,6 @@
     {{/if}}
     {{/if}}
 
-    {{#if (theme-setting "sidebar_show_badges")}}
-    {{#if stinkinBadges}}
-    <div class="badges">
-      <h3>{{i18n (theme-prefix "sidebar.badges_header")}}</h3>
-      {{#each stinkinBadges as |b|}}
-      <a href="/badges/{{b.id}}/{{b.slug}}">
-        {{#badge-button badge=b class=(concat 'badge-type-' b.badge_type_id)}}
-        {{#if b.multiple_grant}}
-        <span class="count">&nbsp;(&times;{{b.grant_count}})</span>
-        {{/if}}
-        {{/badge-button}}
-      </a>
-      {{/each}}
-    </div>
-    {{/if}}
-    {{/if}}
-
     {{#unless user}}
       <div class="visitor">
         {{replace-emoji (i18n "signup_cta.value_prop")}}
