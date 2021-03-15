@@ -508,7 +508,7 @@ body {
     padding-top: 1em;
 
     .d-icon-heart {
-      color: var(--icon, $icon);
+      color: var(--love, $love);
       font-size: 0.9em;
     }
     .user-stat {
@@ -1103,7 +1103,7 @@ body:not(.categories-list) .topic-list {
         align-items: center;
         color: var(--primary-medium, $primary-medium);
         &.likes .d-icon {
-          color: var(--icon, $icon);
+          color: #4AB234;
           margin-top: -1px;
         }
         .d-icon {
