@@ -54,8 +54,10 @@
     {{#if userLikesGiven}}
     <div class="likes">
       <h3>{{i18n (theme-prefix "sidebar.likes_header")}}</h3>      
-      {{user-stat value=userLikesReceived replace-emoji ":grinning:" (hash lazy=true) label="user.summary.likes_received"}}
+      {{replace-emoji ":grinning:" (hash lazy=true)}}
+      {{user-stat value=userLikesReceived label="user.summary.likes_received"}}
       {{user-stat value=userLikesGiven icon="thumbs-up" label="user.summary.likes_given"}}
+      
       {{user-stat value=userPostCount icon="heart" label="user.summary.post_count"}}
       {{user-stat value=userTopicCount icon="heart" label="user.summary.topic_count"}}
     </div>
