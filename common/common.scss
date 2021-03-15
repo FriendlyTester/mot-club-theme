@@ -1103,7 +1103,7 @@ body:not(.categories-list) .topic-list {
         align-items: center;
         color: var(--primary-medium, $primary-medium);
         &.likes .d-icon {
-          color: var(--love, $love);
+          color: var(--icon, $icon);
           margin-top: -1px;
         }
         .d-icon {
