@@ -55,11 +55,11 @@
     <div class="likes">
       <h3>{{i18n (theme-prefix "sidebar.likes_header")}}</h3>      
       {{replace-emoji ":grinning:" (hash lazy=true)}}
-      {{user-stat value=userLikesReceived label=🤗 + "user.summary.likes_received"}}
+      {{user-stat value=userLikesReceived icon="thumbs-up" label="user.summary.likes_received"}}
       {{user-stat value=userLikesGiven icon="thumbs-up" label="user.summary.likes_given"}}
       
-      {{user-stat value=userPostCount icon="heart" label="user.summary.post_count"}}
-      {{user-stat value=userTopicCount icon="heart" label="user.summary.topic_count"}}
+      {{user-stat value=userPostCount icon="reply" label="user.summary.post_count"}}
+      {{user-stat value=userTopicCount icon="pencil" label="user.summary.topic_count"}}
     </div>
     {{/if}}
     {{/if}}
