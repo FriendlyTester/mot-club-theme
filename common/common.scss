@@ -511,6 +511,10 @@ body {
       color: var(--love, $love);
       font-size: 0.9em;
     }
+    
+    .d-icon {
+      color: #4AB234;
+    }
     .user-stat {
       margin-right: 0.5em;
     }
@@ -1103,10 +1107,12 @@ body:not(.categories-list) .topic-list {
         align-items: center;
         color: var(--primary-medium, $primary-medium);
         &.likes .d-icon {
-          color: #4AB234;
+          color: var(--love, $love);
+          
           margin-top: -1px;
         }
         .d-icon {
+          color: #4AB234;
           margin-left: 0.25em;
         }
         &:empty {
