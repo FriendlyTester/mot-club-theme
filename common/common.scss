@@ -1166,9 +1166,12 @@ body.categories-list {
   #main-outlet {
     grid-template-columns: 25% 75%;
       grid-template-areas:
-          "nav topic-list";
+          "alerts alerts alerts"
+          "pins pins pins"
+          "nav topic-list sidebar";
   }
 
   .discovery-below-outlet.sidebar {
     display: none;
+  }
 }
