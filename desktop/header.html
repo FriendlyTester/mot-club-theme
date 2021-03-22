@@ -8,7 +8,7 @@
 
   let currentUser = Discourse.User.currentProp('username');
 
-  api.registerConnectorClass('discovery-above', 'sidebar', {
+  api.registerConnectorClass('discovery-below', 'sidebar', {
     setupComponent(args, component) {
       ajax("/u/" + currentUser + "/summary.json").then (function(result){
 
@@ -37,7 +37,7 @@
 
 <script
   type="text/x-handlebars"
-  data-template-name="/connectors/discovery-above/sidebar"
+  data-template-name="/connectors/discovery-below/sidebar"
 >
   <div class="dbook-sidebar">
     {{#if (theme-setting "sidebar_show_intro")}}
@@ -74,6 +74,9 @@
   <div class="dbook-sidebar">
     <h2>🤗 {{i18n (theme-prefix "sidebar.welcome")}} {{#if userName}}{{i18n (theme-prefix "sidebar.back")}} {{userName}} {{/if}} </h2>
     <p>{{i18n (theme-prefix "sidebar.welcome_subhead")}}</p>
+
+
+
   </div>
 
 </script>
