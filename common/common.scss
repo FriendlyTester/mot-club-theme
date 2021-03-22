@@ -1164,7 +1164,7 @@ section.tag-info {
 body.categories-list {
 
   #main-outlet {
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 1fr 810px;
       grid-template-areas:
           "alerts alerts alerts"
           "pins pins pins"
