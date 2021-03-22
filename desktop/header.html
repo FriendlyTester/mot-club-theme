@@ -8,7 +8,7 @@
 
   let currentUser = Discourse.User.currentProp('username');
 
-  api.registerConnectorClass('discovery-below', 'sidebar', {
+  api.registerConnectorClass('discovery-above', 'sidebar', {
     setupComponent(args, component) {
       ajax("/u/" + currentUser + "/summary.json").then (function(result){
 
@@ -19,15 +19,10 @@
         userPostCount = result.user_summary.post_count;
         userTopicCount = result.user_summary.topic_count;
 
-        result.badges.forEach(function(badges){
-          stinkinBadges.push(badges);
-        });
-
         component.set('userLikesReceived', userLikesReceived);
         component.set('userLikesGiven', userLikesGiven);
         component.set('userPostCount', userPostCount);
         component.set('userTopicCount', userTopicCount);
-        component.set('stinkinBadges', stinkinBadges);
         component.set('userName', api.getCurrentUser().name);
         component.set('user', api.getCurrentUser().username);
 
@@ -42,7 +37,7 @@
 
 <script
   type="text/x-handlebars"
-  data-template-name="/connectors/discovery-below/sidebar"
+  data-template-name="/connectors/discovery-above/sidebar"
 >
   <div class="dbook-sidebar">
     {{#if (theme-setting "sidebar_show_intro")}}
@@ -70,37 +65,18 @@
       </div>
     {{/unless}}
 
+    {{#if user}}
+    <a class="sidebar-link" href="/my/summary">{{i18n (theme-prefix "sidebar.full_profile")}}</a>
+    {{/if}}
+
   </div>
 
   <div class="dbook-sidebar">
-    {{#if (theme-setting "sidebar_show_intro")}}
     <h2>🤗 {{i18n (theme-prefix "sidebar.welcome")}} {{#if userName}}{{i18n (theme-prefix "sidebar.back")}} {{userName}} {{/if}} </h2>
     <p>{{i18n (theme-prefix "sidebar.welcome_subhead")}}</p>
-    {{/if}}
 
-    {{#if (theme-setting "sidebar_show_likes")}}
-    {{#if userLikesGiven}}
-    <div class="likes">
-      <h3>{{i18n (theme-prefix "sidebar.likes_header")}}</h3>
-      {{user-stat value=userLikesReceived icon="thumbs-up" label="user.summary.likes_received"}}
-      {{user-stat value=userLikesGiven icon="thumbs-up" label="user.summary.likes_given"}}
 
-      {{user-stat value=userPostCount icon="reply" label="user.summary.post_count"}}
-      {{user-stat value=userTopicCount icon="pencil-alt" label="user.summary.topic_count"}}
-    </div>
-    {{/if}}
-    {{/if}}
-
-    {{#unless user}}
-      <div class="visitor">
-        {{replace-emoji (i18n "signup_cta.value_prop")}}
-        {{d-button action=(route-action "showCreateAccount") class="btn-primary sign-up-button" label="sign_up"}}
-      </div>
-    {{/unless}}
 
   </div>
 
-  {{#if user}}
-  <a class="sidebar-link" href="/my/summary">{{i18n (theme-prefix "sidebar.full_profile")}}</a>
-  {{/if}}
 </script>
