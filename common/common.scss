@@ -504,14 +504,14 @@ body {
     }
   }
   .likes {
-    border-top: 1px solid var(--primary-low, $primary-low);    
+    border-top: 1px solid var(--primary-low, $primary-low);
     padding-top: 1em;
 
     .d-icon-heart {
       color: var(--love, $love);
       font-size: 0.9em;
     }
-    
+
     .d-icon {
       color: #4AB234;
     }
@@ -1108,7 +1108,7 @@ body:not(.categories-list) .topic-list {
         color: var(--primary-medium, $primary-medium);
         &.likes .d-icon {
           color: var(--love, $love);
-          
+
           margin-top: -1px;
         }
         .d-icon {
@@ -1159,4 +1159,8 @@ section.tag-info {
 .embedded-posts.top .row .topic-avatar,
 .embedded-posts.top .row .topic-body {
   border: none;
+}
+
+body.categories-list.discovery-below-outlet.sidebar {
+  display: none;
 }
