@@ -1161,6 +1161,14 @@ section.tag-info {
   border: none;
 }
 
-body.categories-list .discovery-below-outlet.sidebar {
-  display: none;
+body.categories-list {
+
+  #main-outlet {
+    grid-template-columns: 25% 75%;
+      grid-template-areas:
+          "nav topic-list";
+  }
+
+  .discovery-below-outlet.sidebar {
+    display: none;
 }
